@@ -16,7 +16,7 @@ while attempts < 3:
     try:
         pin = int(pin)
     except ValueError:
-        print("That's not an int.")
+        print("\nYou passed the letter. Please pass the number.\n")
         continue
 
     if pin == 1234:
@@ -25,10 +25,26 @@ while attempts < 3:
         
         while True:
             menu = "1. Withdraw\n2. Balance\n3.Exit\n"
-            option = int(input(f"\nChoose option:\n\n{menu}"))
+            option = input(f"\nChoose option:\n\n{menu}")
+            
+            try:
+                option = int(option)
+            except ValueError:
+                print("\nYou passed the letter. Please pass the number.\n")
+                continue
 
             if option == 1:
-                withdraw = int(input("How much to withdraw? "))
+
+                while True:
+
+                    withdraw = input("How much to withdraw? ")
+
+                    try:
+                        withdraw = int(withdraw)
+                        break
+                    except ValueError:
+                        print("\nYou passed the letter. Please pass the number.\n")
+                        continue
 
                 if withdraw <= balance:
                     balance -= withdraw
@@ -36,6 +52,7 @@ while attempts < 3:
                     print(f"Balance after withdraw: {balance}")
                 else:
                     print("Insufficient funds")
+                        
 
             elif option == 2:
                 print(f"Your balance is {balance}")
