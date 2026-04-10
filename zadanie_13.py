@@ -16,7 +16,7 @@ while attempts < 3:
     try:
         pin = int(pin)
     except ValueError:
-        print("\nYou passed the letter. Please pass the number.\n")
+        print("\nInvalid input. Please enter a number.\n")
         continue
 
     if pin == 1234:
@@ -25,13 +25,13 @@ while attempts < 3:
         
         while True:
            
-            menu = "1. Withdraw\n2. Balance\n3.Exit\n"
+            menu = "1. Withdraw\n2. Balance\n3. Exit\n"
             option = input(f"\nChoose option:\n\n{menu}")
             
             try:
                 option = int(option)
             except ValueError:
-                print("\nYou passed the letter. Please pass the number.\n")
+                print("\nInvalid input. Please enter a number.\n")
                 continue
 
             if option == 1:
@@ -44,7 +44,7 @@ while attempts < 3:
                         withdraw = int(withdraw)
                         break
                     except ValueError:
-                        print("\nYou passed the letter. Please pass the number.\n")
+                        print("\nInvalid input. Please enter a number.\n")
                         
                 if withdraw <= balance:
                     balance -= withdraw
@@ -61,11 +61,11 @@ while attempts < 3:
                 print("Good Bye!")
                 break
             else:
-                print("\nTry again. Please set correct option")
+                print("\nInvalid option. Please choose 1, 2, or 3.\n")
         break
     
     else:
-        attempts +=1
+        attempts += 1
         attempts_left = 3 - attempts
 
         if attempts_left > 0:
