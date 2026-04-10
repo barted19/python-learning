@@ -24,6 +24,7 @@ while attempts < 3:
         print("Access granted")
         
         while True:
+           
             menu = "1. Withdraw\n2. Balance\n3.Exit\n"
             option = input(f"\nChoose option:\n\n{menu}")
             
@@ -44,8 +45,7 @@ while attempts < 3:
                         break
                     except ValueError:
                         print("\nYou passed the letter. Please pass the number.\n")
-                        continue
-
+                        
                 if withdraw <= balance:
                     balance -= withdraw
                     print(f"{withdraw} has been withdrawn")
