@@ -60,6 +60,8 @@ while attempts < 3:
             elif option == 3:
                 print("Good Bye!")
                 break
+            else:
+                print("\nTry again. Please set correct option")
         break
     
     else:
