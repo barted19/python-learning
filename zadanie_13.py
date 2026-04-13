@@ -22,7 +22,7 @@ while attempts < 3:
     if pin == 1234:
 
         print("Access granted")
-        
+
         while True:
            
             menu = "1. Withdraw\n2. Balance\n3. Exit\n"
